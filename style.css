@@ -1,0 +1,179 @@
+
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #67d4f0;
+}
+
+/* Barra Superior (7 elementos) */
+.navbar {
+    width: 100%;
+    height: 60px;
+    background: #2c3e50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* Botón de las 3 líneas (Menú Lateral) */
+.lbl-menu {
+    position: fixed;
+    top: 75px; /* Debajo de la barra superior */
+    left: 20px;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.lbl-menu span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #50013c;
+    margin-top: 5px;
+    transition: all 0.3s;
+}
+
+/* Esconder el checkbox */
+#btn-menu {
+    display: none;
+}
+
+/* Menú Lateral (9 opciones) */
+.menu-lateral {
+    width: 250px;
+    height: 100vh;
+    background: #5e0347;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Escondido a la izquierda */
+    transition: all 0.4s;
+    padding-top: 130px;
+    z-index: 150;
+}
+
+.menu-lateral ul {
+    list-style: none;
+}
+
+.menu-lateral ul li a {
+    display: block;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.menu-lateral ul li a:hover {
+    background: #5c0245;
+}
+
+/* Lógica para abrir el menú */
+#btn-menu:checked ~ .menu-lateral {
+    left: 0; /* Al marcar el checkbox, se desplaza a la vista */
+}
+
+/* Contenido Central */
+.contenido-principal {
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+}
+/* Contenedor de la Galería */
+.galeria-productos {
+    display: grid;
+    /* Crea columnas de al menos 250px que se ajustan solas */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra la galería en la pantalla */
+}
+
+.titulo-seccion {
+    margin-top: 40px;
+    color: #2c3e50;
+}
+
+/* Tarjeta individual de producto */
+.tarjeta-producto {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-10px); /* Efecto al pasar el mouse */
+}
+
+/* Espacio para la imagen */
+.imagen-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #95a5a6;
+    font-weight: bold;
+}
+
+/* Información (Título, Precio, Botón) */
+.info-producto {
+    padding: 20px;
+    text-align: center;
+}
+
+.info-producto h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.precio {
+    color: #27ae60;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Botón de agregar */
+.btn-agregar {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-agregar:hover {
+    background-color: #2980b9;
+}
